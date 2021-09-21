@@ -50,9 +50,37 @@
     b {
         cursor: pointer;
     }
+    p {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 0 100px;
+    }
+    figure {
+        display: flex;
+    }
+    figure:before {
+        content: "";
+        display: block;
+        width: 16px;
+        height: 16px;
+		border: 1px solid #eee;
+        margin-right: 8px;
+    }
+    figure.green:before {
+        background: #00aa55;
+    }
+    strong {
+        font-weight: normal;
+    }
 </style>
 
 <section>
+    <p>
+        <figure class="green" ><strong>Green - available</strong></figure>
+        <figure><strong>White - not available</strong></figure>
+
+    </p>
     <span>
         <ChangeMonth direction={-1} />
         {$date.toLocaleString('default', { month: 'long' })} { $date.getFullYear() } 
