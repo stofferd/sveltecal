@@ -1,10 +1,10 @@
 <script>
-	export let name;
+  	import Calendar from './Calendar.svelte'
 </script>
 
 <main>
-	<h1>{name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+	<h1>Chris D cal</h1>
+ 	<Calendar  />
 </main>
 
 <style>
@@ -13,10 +13,15 @@
 		padding: 1em;
 		max-width: 240px;
 		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		height: 90vh;
+		min-height: 500px;
 	}
 
 	h1 {
-		color: #ff3e00;
+		color: #00aa55;
 		text-transform: uppercase;
 		font-size: 4em;
 		font-weight: 100;
