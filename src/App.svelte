@@ -11,7 +11,6 @@
 	main {
 		text-align: center;
 		padding: 1em;
-		max-width: 240px;
 		margin: 0 auto;
 		display: flex;
 		flex-direction: column;
@@ -26,10 +25,14 @@
 		font-size: 4em;
 		font-weight: 100;
 	}
-
-	@media (min-width: 640px) {
+	@media (max-width: 639px) {
+		h1 {
+			font-size: 3rem;
+			margin: 0.4rem 0 0.8rem;
+		}
 		main {
-			max-width: none;
+			padding: 0;
 		}
 	}
+ 
 </style>

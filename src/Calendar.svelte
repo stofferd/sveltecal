@@ -49,7 +49,7 @@
     div {  
         display: grid;
         grid-template-columns: repeat(7,50px);
-        grid-template-rows: repeat(8,50px);
+        grid-template-rows: repeat(7,50px);
         justify-content: center;
     }
     b {
@@ -59,7 +59,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        margin: 0 0 100px;
+        margin: 0 0 80px;
     }
     figure {
         display: flex;
@@ -78,13 +78,24 @@
     strong {
         font-weight: normal;
     }
+    @media (max-width: 639px) {
+        p {
+            margin-bottom: 0;
+            flex-direction: column;
+        }
+        figure {
+            margin: 6px 0;
+        }
+        span {
+            margin: 20px auto 10px;
+        }
+    }
 </style>
 
 <section>
     <p>
         <figure class="green" ><strong>Green - available</strong></figure>
         <figure><strong>White - not available</strong></figure>
-
     </p>
     <span>
         <ChangeMonth direction={-1} />
