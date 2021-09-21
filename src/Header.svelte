@@ -3,15 +3,14 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        font-weight: bold;
     }
 </style>
 
-    <span>M</span>
-    <span>T</span>
-    <span>W</span>
-    <span>T</span>
-    <span>F</span>
-    <span>S</span>
-    <span>S</span>
+    <span title="Monday"><b>M</b></span>
+    <span title="Tuesday"><b>T</b></span>
+    <span title="Wednesday"><b>W</b></span>
+    <span title="Thursday"><b>T</b></span>
+    <span title="Friday"><b>F</b></span>
+    <span title="Saturday">S</span>
+    <span title="Sunday">S</span>
 

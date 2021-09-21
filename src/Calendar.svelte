@@ -3,15 +3,20 @@
     import Header from './Header.svelte';
     import Day from './Day.svelte';
     import ChangeMonth from './ChangeMonth.svelte';
- 
+    import MonthYearSelect from './MonthYearSelect.svelte';
+
+    const makeArray = (length) => {
+        return Array(length);
+    }
+
     $: year = $date.getFullYear();
     $: month = $date.getMonth();
     $: numberOfDays = new Date(year, month + 1, 0).getDate();
-    $: days = Array(numberOfDays);
+    $: days = makeArray(numberOfDays);
     $: firstDay = new Date(year, month, 1);
-    $: firstDayOfWeek = firstDay.getDay() -1;
-    $: buffer = Array(firstDayOfWeek);
-
+    $: firstDayOfWeek = Math.max(firstDay.getDay() -1, 0);
+    $: buffer = makeArray(firstDayOfWeek);
+   
     function resetDate() {
         const newDate = new Date();
         date.update(()=>newDate);
@@ -83,7 +88,7 @@
     </p>
     <span>
         <ChangeMonth direction={-1} />
-        {$date.toLocaleString('default', { month: 'long' })} { $date.getFullYear() } 
+        <MonthYearSelect />
         <ChangeMonth direction={1} />
     </span>
 

@@ -1,6 +1,5 @@
 <script>
     import { availability } from './store.js';
-    console.log({availability});
     export let date; 
     export let month; 
     export let year; 
