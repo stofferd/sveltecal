@@ -1,5 +1,7 @@
 import { readable, writable } from 'svelte/store';
 
+// curl https://sheets.googleapis.com/v4/spreadsheets/{SHEET_ID}/values/Sheet1?key={API_KEY}
+
 export const date = writable(new Date());
 
 const getDateRange = (start, end = start + 4, month, year) => {
