@@ -12,9 +12,7 @@
     }
     function changeYear(newYear) {
         const newDate = new Date( $date );
-        console.log({newYear})
         const nextDate = new Date( newDate.setFullYear( years[0] + Number(newYear) ) );
-        console.log({nextDate})
         date.update(()=>nextDate);
     }
 </script>
