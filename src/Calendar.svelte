@@ -1,4 +1,23 @@
 <script>
+    // let calendarData
+    ;(async () => {
+        const res = await window.fetch(
+            "/.netlify/functions/entry",
+            {
+                method: "GET",
+                headers: {
+                    Accept: "application/json",
+                    "Content-Type": "application/json",
+                },
+               
+            }
+        );
+        const sheet = await res.text();
+        console.log({sheet});
+    })()
+
+
+
     import { date } from './store.js';
     import Header from './Header.svelte';
     import Day from './Day.svelte';

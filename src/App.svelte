@@ -1,5 +1,6 @@
 <script>
-  	import Calendar from './Calendar.svelte'
+  	import Calendar from './Calendar.svelte';
+ 
 </script>
 
 <main>
