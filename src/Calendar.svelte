@@ -1,24 +1,23 @@
 <script>
-    // let calendarData
-    ;(async () => {
-        const res = await window.fetch(
-            "/.netlify/functions/entry",
-            {
-                method: "GET",
-                headers: {
-                    Accept: "application/json",
-                    "Content-Type": "application/json",
-                },
-               
-            }
-        );
-        const sheet = await res.text();
-        console.log({sheet});
-    })()
-
-
-
     import { date } from './store.js';
+    import { availability } from './store.js';
+
+    let importedSheet;
+    let sheet;
+
+    (async () => {
+        const res = await window.fetch('.netlify/functions/entry', {
+            method: 'GET',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json'
+            }
+        });
+        importedSheet = await res.text();
+        sheet =  JSON.parse(importedSheet)?.values?.[0].filter(date=>date!=null).map(date => date.replace(/\//gi,'-')) ?? [];
+        availability.update(()=>sheet);
+    })();
+
     import Header from './Header.svelte';
     import Day from './Day.svelte';
     import ChangeMonth from './ChangeMonth.svelte';
@@ -34,8 +33,8 @@
     $: days = makeArray(numberOfDays);
     $: firstDay = new Date(year, month, 1);
     $: firstDayOfWeek = Math.max(firstDay.getDay() -1, 0);
-    $: buffer = makeArray(firstDayOfWeek);
-   
+    $: buffer = makeArray(firstDayOfWeek === 0 ? 6 : firstDayOfWeek); // sunday not start of week!
+
     function resetDate() {
         const newDate = new Date();
         date.update(()=>newDate);

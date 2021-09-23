@@ -19,8 +19,8 @@
 		"svelte": "^3.43.0"
 	},
 	"dependencies": {
-		"node-fetch": "^3.0.0",
+		"node-fetch": "^1.7.3",
 		"sirv-cli": "^1.0.14"
 	},
-	"type": "module"
+	"type": "commonjs"
 }
