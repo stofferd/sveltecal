@@ -1,6 +1,6 @@
-const fetch = require('node-fetch');
-
 exports.handler = async (event, context, callback) => {
+	const fetch = require('node-fetch');
+
 	// const pwords = process.env.GATSBY_PASSWORDS;
 	// const body = JSON.parse(event.body);
 	// const match = pwords && pwords.split(' ').includes(body.typed);
