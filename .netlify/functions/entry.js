@@ -15,5 +15,3 @@ exports.handler = async (event, context, callback) => {
 
 	callback(null, { statusCode: 200, body: sheet });
 };
-
-// # curl https://sheets.googleapis.com/v4/spreadsheets/1BluOB1j7-d_bupUntDj0whvELL78xKCNjOQcdT4Z_34/values/Sheet1?key=AIzaSyBeWq1McsbBnrln1C64GX7AMRbz2xVfRl8
