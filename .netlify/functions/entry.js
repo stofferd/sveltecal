@@ -1,3 +1,5 @@
+import fetch from 'node-fetch';
+
 exports.handler = async (event, context, callback) => {
 	// const pwords = process.env.GATSBY_PASSWORDS;
 	// const body = JSON.parse(event.body);
@@ -7,7 +9,7 @@ exports.handler = async (event, context, callback) => {
 	// 	statusCode: 200,
 	// 	body: '' + match
 	// });
-	const sheet = await window.fetch(
+	const sheet = await fetch(
 		`https://sheets.googleapis.com/v4/spreadsheets/${process.env.SHEET_ID}/values/Sheet1?key=${process.env.API_KEY}`
 	);
 
